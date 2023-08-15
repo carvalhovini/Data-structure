@@ -1,26 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int primo(int num)
-{
-    for (int i = 2; i * i <= num; i++){
-        if (num % i == 0){
-            return 0;
+int main(int argc, char* argv[]){
+    int num, i;
+
+    num = atoi(argv[1]);
+
+    if(num <= 1){
+        printf("0");
+    }else{
+        for(i=2; i < num; i+=2){
+    if(num%i==0){
+        printf("0");
+    break;
         }
     }
-    
-    return 1;
-
+    if(i==num){
+        printf("1");
+    }
 }
 
-int main(){
-    int numero;
-    
-    printf("digite o numero: \n");
-    scanf("%d", &numero);
-    
-    if(primo(numero)){
-        printf("%d e um numero primo");
-    } else {
-        printf("%d não e um numero primo");
-    }
+return 0;
+
 }
